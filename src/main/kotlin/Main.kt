@@ -1,7 +1,11 @@
+import domain.product.ProductService
+import domain.product.ProductServiceImpl
+
 fun main(args: Array<String>) {
 
-    // Start Main UI/UX
+    // product service di
+    val productService : ProductService = ProductServiceImpl()
 
-
+    productService.findAll()
 
 }
