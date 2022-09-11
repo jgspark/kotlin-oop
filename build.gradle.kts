@@ -13,6 +13,7 @@ repositories {
 }
 
 dependencies {
+    implementation("org.springframework:spring-core:5.3.22")
     testImplementation(kotlin("test"))
 }
 
