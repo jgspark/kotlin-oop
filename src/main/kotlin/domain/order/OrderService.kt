@@ -1,8 +1,13 @@
 package domain.order
 
-import domain.order.data.OrderInput
-
 interface OrderService {
 
-    fun order(input : OrderInput)
+    fun order(input: OrderInput)
+}
+
+class OrderServiceImpl : OrderService {
+
+    override fun order(input: OrderInput) {
+        // TODO("Not yet implemented")
+    }
 }
