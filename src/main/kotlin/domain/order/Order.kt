@@ -1,5 +1,8 @@
-package domain.order.data
+package domain.order
 
+/**
+ * order input data class
+ */
 data class OrderInput constructor(
     private val productNum: Int,
     private val orderCount: Int,
