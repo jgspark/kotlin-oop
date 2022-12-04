@@ -1,19 +1,15 @@
-import domain.order.OrderService
-import domain.order.OrderServiceImpl
+import config.App
+import domain.order.OrderPrintService
+import domain.order.OrderPrintServiceImpl
 import domain.product.ProductService
 import domain.product.ProductServiceImpl
-import java.util.Scanner
+import java.util.*
 
 fun main(args: Array<String>) {
 
     val sc: Scanner = Scanner(System.`in`)
 
-    // product service di
-    val productService: ProductService = ProductServiceImpl()
-
-    val orderService: OrderService = OrderServiceImpl()
-
-    val products = productService.findAll()
+    val (productService, orderPrintService) = App.init()
 
     println("입력(o[order]: 주문, q[quit]: 종료):")
 
@@ -21,7 +17,7 @@ fun main(args: Array<String>) {
 
     if ("o" == type) {
 
-        orderService.printProduct(products)
+        orderPrintService.print()
 
         println("상품번호:")
 
@@ -30,7 +26,6 @@ fun main(args: Array<String>) {
         println("갯수:")
 
         val count = sc.next()
-
 
     } else {
         sc.close()
